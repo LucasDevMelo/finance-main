@@ -1,0 +1,34 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1727993642508,
+      "tag": "0000_lush_barracuda",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1727995637143,
+      "tag": "0001_flaky_mattie_franklin",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1731267153579,
+      "tag": "0002_cultured_mephisto",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1731412740874,
+      "tag": "0003_mysterious_thunderball",
+      "breakpoints": true
+    }
+  ]
+}
