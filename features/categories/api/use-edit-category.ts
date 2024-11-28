@@ -10,11 +10,7 @@ type RequestType = InferRequestType<
   (typeof client.api.categories)[":id"]["$patch"]
 >["json"];
 
-const useEditCategory = (id: string) => {
-  if (!id) {
-    throw new Error("ID is required for editing a category");
-  }
-
+const useEditCategory = (id?: string) => {
   const queryClient = useQueryClient();
   const mutation = useMutation<ResponseType, Error, RequestType>({
     mutationFn: async (json) => {
