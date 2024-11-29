@@ -14,6 +14,10 @@ const useEditTransaction = (id?: string) => {
   const queryClient = useQueryClient();
   const mutation = useMutation<ResponseType, Error, RequestType>({
     mutationFn: async (json) => {
+      // Verifica se `id` é definido antes de usá-lo
+      if (!id) {
+        throw new Error("Category ID is required to edit the category.");
+      }
       const res = await client.api.transactions[":id"]["$patch"]({
         param: { id },
         json,
