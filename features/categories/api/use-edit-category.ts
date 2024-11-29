@@ -12,15 +12,23 @@ type RequestType = InferRequestType<
 
 const useEditCategory = (id?: string) => {
   const queryClient = useQueryClient();
+
   const mutation = useMutation<ResponseType, Error, RequestType>({
     mutationFn: async (json) => {
+      // Verifica se `id` é definido antes de usá-lo
+      if (!id) {
+        throw new Error("Category ID is required to edit the category.");
+      }
+
       const res = await client.api.categories[":id"]["$patch"]({
         param: { id },
         json,
       });
+
       if (!res.ok) {
         throw new Error("Failed to edit category");
       }
+
       return await res.json();
     },
     onSuccess: () => {
@@ -33,6 +41,7 @@ const useEditCategory = (id?: string) => {
       toast.error("Failed to edit category");
     },
   });
+
   return mutation;
 };
 
