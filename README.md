@@ -5,6 +5,7 @@ npm install
 npm install @clerk/nextjs
 
 npm run dev
+
 Imagens do projeto: 
 
 
